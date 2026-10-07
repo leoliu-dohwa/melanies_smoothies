@@ -49,6 +49,8 @@ import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
 st.text(smoothiefroot_response.json())
 
+sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_with=True)
+
 # Create a database connection to Snowflake
 # conn = st.connection("snowflake", ttl=os.getenv("SNOWFLAKE_CONNECTION_TTL"))
 # session = conn.session()
